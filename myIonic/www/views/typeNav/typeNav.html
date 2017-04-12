@@ -1,0 +1,42 @@
+<ion-view>
+	<ion-header-bar class="item-input-inset bar-light padding">
+		<button class="button button-clear icon ion-ios-arrow-left" ng-click="goback()"> <span class="min">返回</span></button>
+		<div class="title" style="font-size: 1rem;">
+			找车
+		</div>
+		<button class="button button-clear button-energized" ng-click="goback()"> <span class="min" style="color: orange;">确定</span></button>
+	</ion-header-bar>
+	<ion-content>
+		<div class="list">
+			<a class="item min" href="#">
+				不限
+			</a>
+		</div>
+		<ul class="list">
+			<li ng-repeat="(val,index) in data.resultMap">
+				<ul>
+					<li class="item item-divider">
+						<span class="min">{{val}}</span>
+					</li>
+					<li ng-repeat="ins in index">
+						<div class="item item-icon-right min" ng-click="istrue = !istrue">
+							{{ins.brandName}}
+							<i ng-class="!istrue?'icon ion-ios-arrow-right icons_smalls':'icon ion-ios-arrow-down icons_smalls'"></i>
+						</div>
+						<ul>
+							<li style="padding-left: 12px;">
+								<a style="border-left: none;" ui-sref="cars({pageNumber : 0,brandId :'',carModel :'',priceTypeId :'',seriesId :'',carTag:'1'})"
+									 class="item item-icon-right min" ng-repeat="good in ins.seriesResponseList"
+									 ng-show="istrue"
+									 >
+									{{good.name}}
+									<i class="icon ion-ios-arrow-right icons_smalls"></i>
+								</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</ion-content>
+</ion-view>

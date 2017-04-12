@@ -1,0 +1,106 @@
+<ion-view id="find">
+	<ion-header-bar class="item-input-inset bar-energized padding">
+		<button class="button button-clear icon ion-ios-arrow-left" ng-click="goback()"> <span class="min">返回</span></button>
+		<div class="title" style="font-size: 0.8rem;">选择提车门店
+			<i class="icon ion-arrow-down-b"></i>
+		</div>
+	</ion-header-bar>
+	<div class="bar bar-subheader" ng-show="isopen" style="z-index: 200;">
+		<div class="title" style="padding: 5px 0;">
+			<div class="row" style="text-align: center;font-size: 0.8rem;height: 30px;">
+				<div class="col col-33">
+					<div class="col-demo" style="position: relative;bottom: 15px;"  ui-sref="typeNav">
+						品牌找车
+						<i class="icon ion-arrow-down-b icons_small"></i>
+					</div>
+				</div>
+				<div class="col col-33" style="border-left: 1px solid #E8E8E8;border-right: 1px solid #E8E8E8;">
+					<div class="col-demo" style="position: relative;bottom: 15px;" ng-click="show()">
+						价格范围
+						<i class="icon ion-arrow-down-b icons_small"></i>
+					</div>
+				</div>
+				<div class="col col-33">
+					<div class="col-demo" style="position: relative;bottom: 15px;" ng-click="show1()">
+						车型级别
+						<i class="icon ion-arrow-down-b icons_small"></i>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="logo"></div>
+	<ion-content style="z-index: 20;" id="bottonBar">
+		<div class="empty" style="padding: 0 24px;">
+			<div class="list list-inset" style="position: relative;top: 70px;">
+				<label class="item item-input" style="padding: 0 30px;opacity: 0.8;background: #eeeff0;">
+				    <i class="icon ion-search placeholder-icon"></i>
+				    <input type="text" placeholder="Search">
+			  	</label>
+			</div>
+		</div>
+		<div class="list" id="mast" style="position: relative;">
+			<div class="item" style="padding: 5px;">
+				<div class="row" style="text-align: center;font-size: 0.8rem; padding: 0;">
+					<div class="col col-33">
+						<div class="col-demo" ui-sref="typeNav">
+							品牌找车
+							<i class="icon ion-arrow-down-b"></i>
+						</div>
+					</div>
+					<div class="col col-33" style="border-left: 1px solid #E8E8E8;border-right: 1px solid #E8E8E8;">
+						<!--<div class="col-demo" ng-click="loadMore(pageNumber = 0,brandId ='',carModel ='',priceTypeId ='2',seriesId ='')">-->
+						<div class="col-demo" ng-click="show()">
+							价格范围
+							<i class="icon ion-arrow-down-b"></i>
+						</div>
+					</div>
+					<div class="col col-33">
+						<div class="col-demo"  ng-click="show1()">
+							车型级别
+							<i class="icon ion-arrow-down-b"></i>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="list" ng-repeat="dos in data">
+			<a class="item item-thumbnail-left" ui-sref="goods({goodsId:car.modelIdString})" ng-repeat="car in dos.response.newCarSellList">
+				<img src="{{car.goodsMainPhoto | toHttp}}">
+				<h2>{{car.goodsName}}</h2>
+				<p style="padding: 9px 0;">指导价: {{car.marketPrice | toPrice}}</p>
+				<strong style="color: red;">{{car.currentPrice | toPrice}}</strong>
+			</a>
+		</div>
+		<ion-infinite-scroll on-infinite="load()" distance="1%">
+		</ion-infinite-scroll>
+	</ion-content>
+		<div class="choice-pciker" ng-if="isshows">
+            <div class="mui-pciker-list" style="transform: perspective(1000px) rotateY(0deg) rotateX(0deg);">
+            	<p style="width: 100vw;background: #EEE;height: 48px; padding: 8px 0;">
+            		<button style="float: left;padding: 5px 12px;margin-left: 12px; border: none;background: #DDD;"  ng-click="hide()">
+					           	 <span class="min bold">取消</span>
+					         </button>
+					<button style="float: right; padding: 5px 12px;margin-right: 12px;background: blue;border: none;"  ng-click="hide()">
+					           	<span class="min bold" style="color: white;"> 确定</span>
+					         </button>
+            	</p>
+            	<div class="mui-pciker-t" ng-click="next()" style="overflow: hidden;">
+            		<p style="transform-origin: center center -89.5px; transform: translateZ(89.5px) rotateX(72deg);">{{data1[10]}}</p>
+					<p style="transform-origin: center center -89.5px; transform: translateZ(89.5px) rotateX(54deg);">{{data1[11]}}</p>
+					<p style="transform-origin: center center -89.5px; transform: translateZ(89.5px) rotateX(36deg);">{{data1[12]}}</p>
+					<p style="transform-origin: center center -89.5px; transform: translateZ(89.5px) rotateX(18deg);">{{data1[13]}}</p>
+            	</div>
+            	<div class="mui-pciker-m" style="border-bottom: 1px solid #666;border-top: 1px solid #666;">
+            		<p style="transform-origin: center center -89.5px; transform: translateZ(89.5px) rotateX(0deg);" class="highlight">{{data1[14]}}</p>
+            	</div>
+            	<div class="mui-pciker-bot" ng-click="prev()" style="overflow: hidden;">
+            		<p style="transform-origin: center center -89.5px; transform: translateZ(89.5px) rotateX(-18deg);">{{data1[15]}}</p>
+            		<p style="transform-origin: center center -89.5px; transform: translateZ(89.5px) rotateX(-36deg);">{{data1[16]}}</p>
+					<p style="transform-origin: center center -89.5px; transform: translateZ(89.5px) rotateX(-54deg);">{{data1[17]}}</p>
+					<p style="transform-origin: center center -89.5px; transform: translateZ(89.5px) rotateX(-72deg);">{{data1[18]}}</p>
+            	</div>
+            </div>
+			<div class="mui-pciker-b" ng-click="hide()"></div >
+		</div>
+</ion-view>

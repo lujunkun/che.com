@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="shortcut icon" href="skin/icon/favorite.ico" type="image/x-icon" />
+    <title>首页</title>
+    <!--标准mui.css-->
+	<link rel="stylesheet" href="mui/css/mui.min.css">
+    <link rel="stylesheet" href="skin/css/m.css?v1.0">
+    <link rel="stylesheet" href="skin/css/niui.css?v1.0">
+    <style>
+    body{min-width:320px;}
+    	.top-app-download{height:60px;background:#000;}
+    	.icon-app-close{width:45px;height:60px;line-height:60px;text-align:center;background:url('skin/icon/icon_ad_close@2x.png') no-repeat 15px center;background-size:20px 20px;float:left;}
+    	.app-logo{width:50px;height:60px;background:url('skin/icon/icon_ad_appicon@2x.png') no-repeat left center;background-size:44px 44px;float:left;}
+    	.app-text{float:left;color:#fff;font-size:12px;line-height:180%;}
+    	.app-text .h3{font-size:15px;padding-top:10px;}
+    	.app-button{width:90px;height:35px;line-height:35px;font-size:15px;color:#001826;text-align:center;background:#fdc235;border-radius:4px;position:absolute;right:12px;top:12px;}
+    	.txt2{width:240px;height:30px;position:absolute;left:50%;margin-left:-120px;background:#efeff4;z-index:2;}
+    .line2{width:100%;position:absolute;left:0;top:9px;border-bottom:1px #ddd solid;}
+    </style>
+    
+     <script>
+		//声明_czc对象:
+		var _czc = _czc || [];
+		//绑定siteid，请用您的siteid替换下方"XXXXXXXX"部分
+		_czc.push(["_setAccount", "1256849504"]);
+		
+	</script>
+</head>
+<body id="body">
+	<nav class="mui-bar mui-bar-tab nav">
+		<a class="mui-tab-item now"  href="index.html" id="home">
+			<span class="icon icon-home" style="font-size: 20px;"></span><br>
+			首页
+		</a>
+		<a class="mui-tab-item" href="find.html" id="find">
+			<span class="icon icon-find" style="font-size: 20px;"></span><br>
+			找车
+		</a>
+		<a class="mui-tab-item" href="buy.html" id="buy">
+			<span class="icon icon-buy" style="font-size: 20px;"></span><br>
+			帮买
+		</a>
+		<a class="mui-tab-item" href="me.html" id="me">
+			<span class="icon icon-me" style="font-size: 20px;"></span><br>
+			我
+		</a>
+	</nav>	
+	
+	<div class="top-app-download w w-100" style="display:none;">
+		<div class="icon icon-app-close"></div>
+		<div class="app-logo"></div>
+		<div class="app-text">
+			<div class="h3">下载车城商城App</div>
+			实时了解优惠信息
+		</div>
+		<div class="app-button">立即下载</div>
+	</div>
+	
+	<!-- search start -->
+	<div id="top-a" class="w w-100 bg-h" style="height:44px;position:fixed;top:0px;z-index:9;">
+		<form class="link-1" name="form" action="search_success.html" method="get">
+	
+		<div class="search">
+			<div class="search-center">
+			<i class="icon icon-search"></i>
+			<input class="ipt noborder" id="keyword" name="keyword" type="text" placeholder="请搜索您感兴趣的品牌或车型" readonly>
+			</div>
+		</div>
+		</form>
+	</div>
+	
+	<div class="w w-100 bg-a m" data-h="500" style="position:relative;">
+		<div class="w w-100" style="height:44px;"></div>
+		<!-- search end -->
+		<div class="w w-100 m" data-h="250" style="position:relative;"><i class="icon icon-banner-logo"></i></div>
+	</div>
+	<div id="pullrefresh" class="mui-scroll-wrapper" style="margin-top:44px;margin-bottom:51px;">
+		<div class="mui-scroll">	
+			<div class="w w-100 m" data-h="270"></div>
+			<!-- content start -->
+			<div class="w w-100" style="background-color: #efeff4;">
+				<div class="w w-100 bg-b home-nav link-1">
+					<!--<a href="find.html">
+						<i class="icon icon-gnxc"></i><br>
+						国内新车
+					</a>
+					<a href="http://jinkou.m.che.com/">
+						<i class="icon icon-pxjkc"></i><br>
+						平行进口车
+					</a>
+					<a href="buy.html">
+						<i class="icon icon-bwmc"></i><br>
+						帮我买车
+					</a>
+					<a href="http://m.checheng.com">
+						<i class="icon icon-zx"></i><br>
+						资讯
+					</a>-->
+					<a href="search_success.html" class="a-btm" data-cartag = "1" data-tagvalue = "家用车">
+						<i class="icon icon-jyc"></i><br>
+						家用车
+					</a>
+					<a href="search_success.html" class="a-btm a-lar" data-cartag = "2" data-tagvalue = "商务车">
+						<i class="icon icon-syc"></i><br>
+						商务车
+					</a>
+					<a href="search_success.html" class="a-btm" data-cartag = "3" data-tagvalue = "旅行车">
+						<i class="icon icon-lxc"></i><br>
+						旅行车
+					</a>
+				</div>
+				<div class="w w-100 bg-b home-nav link-1" >
+					<a href="search_success.html" class="a-btm" data-cartag = "4" data-tagvalue = "SUV">
+						<i class="icon icon-suv"></i><br>
+						SUV
+					</a>
+					<a href="search_success.html" class="a-btm a-lar"  data-cartag = "5" data-tagvalue = "七座、MPV">
+						<i class="icon icon-qzsw"></i><br>
+						七座、MPV
+					</a>
+					<a href="http://jinkou.m.che.com/" class="a-btm" data-cartag = "" data-tagvalue = "">
+						<i class="icon icon-pxjk"></i><br>
+						平行进口
+					</a>
+				</div>
+				<div class="w w-100 bg-b home-nav link-1">
+					<a href="search_success.html"  data-cartag = "6" data-tagvalue = "新能源">
+						<i class="icon icon-xny"></i><br>
+						新能源
+					</a>
+					<a href="search_success.html" class="a-lar"  data-cartag = "7" data-tagvalue = "跑车">
+						<i class="icon icon-pc"></i><br>
+						跑车
+					</a>
+					<a href="search_success.html"  data-cartag = "" data-tagvalue = "">
+						<i class="icon icon-all"></i><br>
+						全部新车
+					</a>
+				</div>
+				<!--<div class="w w-100 bg-b home-title">
+					<div class="txt">服务承诺</div>
+					<div class="line"></div>
+				</div>
+				<div class="w w-100 bg-b home-fwcn-list">
+					<div class="home-left">
+						<i class="icon icon-fwcn-1"></i>
+					</div>
+					<div class="home-right">
+						<h3>完全正品，放心选购</h3>
+						<p>所有车源来自厂商／4S店正规渠道，品质保障、值得信赖</p>
+					</div>
+				</div>
+				<div class="w w-100 bg-b home-fwcn-list">
+					<div class="home-left">
+						<i class="icon icon-fwcn-2"></i>
+					</div>
+					<div class="home-right">
+						<h3>价格实惠，省心省力</h3>
+						<p>精选车源，价格透明，网上轻松下单，享受4S店级别服务</p>
+					</div>
+				</div>
+				<div class="w w-100 bg-b home-fwcn-list">
+					<div class="home-left">
+						<i class="icon icon-fwcn-3"></i>
+					</div>
+					<div class="home-right">
+						<h3>原厂质保，售后无忧</h3>
+						<p>所有车辆均进行PDI检测，手续完备，享受厂商全国联保</p>
+					</div>
+				</div>
+				<div class="w w-100 bg-b home-fwcn-list" style="padding-bottom:0px;">
+					<div class="home-left">
+						<i class="icon icon-fwcn-4"></i>
+					</div>
+					<div class="home-right">
+						<h3>全程服务，专业体贴</h3>
+						<p>全年在线客服／电话客服／专业销售顾问一对一服务，为您排忧</p>
+					</div>
+				</div>-->
+		
+				<div class="w w-100 bg-b home-title">
+					<div class="txt">购车流程</div>
+					<div class="line"></div>
+				</div>
+		
+				<div class="w w-100 bg-b home-gwlc-list" style="padding-top:5px;">
+					<div class="col-19">
+						<i class="icon icon-gwlc-1"></i><br>
+						车辆在线<br>预定
+					</div>
+					<div class="col-8"></div>
+					<div class="col-19">
+						<i class="icon icon-gwlc-2"></i><br>
+						客服确定<br>需求
+					</div>
+					<div class="col-8"></div>
+					<div class="col-19">
+						<i class="icon icon-gwlc-3"></i><br>
+						专属顾问<br>服务
+					</div>
+					<div class="col-8"></div>
+					<div class="col-19">
+						<i class="icon icon-gwlc-4"></i><br>
+						验车付款<br>交车
+					</div>
+				</div>
+			</div>
+			<div class="w w-100" style="margin-top:10px;">
+				<a class="w-100 call-tel" href="tel:4008887777"><img src="skin/icon/home-tel.png" style="width:100%;"></a>
+			</div>
+			<div class="w w-100" style="height:10px;"></div>
+			<div class="w w-100 p15">
+				<div class="w w-100" style="text-align: center;margin-bottom:10px;position:relative;color:#78787e;height:50px;overflow: hidden;">
+				<div class="">© 2015-2017 车城网络科技（上海）有限公司<br>版权所有</div>
+				<!--div class="line2"></div-->
+				</div>
+			</div>
+		</div>
+		
+	</div>
+	
+	
+	<div class="w w-100 bg-s" id="search-box" style="width:100%;position:fixed;top:44px;z-index:10;height:100%;display:none;">
+		
+	    <div class="w-90 m">
+	        <div class="car-search-tit">搜索记录</div>
+	        
+	        <div class="car-search-li">
+	            <ul class="w-100 bbn" id="search-histry">
+	               
+	            </ul>
+	        </div>
+	    </div>
+	</div>
+	
+	
+	<script src="skin/js/jquery.min.js"></script>
+	<script src="skin/js/cookie.js?v1.0"></script>
+	<script src="skin/js/jquery.cookie.js?v1.0"></script>
+    <script src="skin/js/m.js?v1.0"></script>
+	<script src="mui/js/mui.min.js"></script>
+	<script src="mui/js/function.js?v1.0"></script>
+	<script src="skin/js/api.js?v1.1"></script>
+	<script>
+		function callback(){
+			//下载
+			mui('.top-app-download').on('tap','.app-button',function(){
+				var url = 'http://a.app.qq.com/o/simple.jsp?pkgname=io.dcloud.com.che.xinche';
+				window.open(url);
+			});
+			
+			//关闭顶部
+			mui('.top-app-download').on('tap','.icon-app-close',function(){
+				$('#top-a').css('top',0);
+				$('#pullrefresh').css('margin-top',44);
+				$('.top-app-download').hide();
+				$.cookie('showAppDownload', 1 , { path: '/', expires: 10 });
+			});
+			
+			if($.cookie('showAppDownload') != 1)
+			{
+				$('#top-a').css('top',60);
+				$('#pullrefresh').css('margin-top',104);
+				$('.top-app-download').show();
+			}
+			
+			
+			//搜索跳转
+			mui('.search').on('tap','input',function(){
+				//$('#search-box').show();
+				//$('#pullrefresh').hide();
+				var url = 'search.html';
+				var id = url;
+				mui.openWindow({
+					id: id,
+					url: url
+				});
+			});
+		}
+		
+		(function($, doc) {
+			
+			//预加载
+			$.ready(function(){
+				
+				$.init();
+				callback();
+				//endCallback();
+				
+				//底部选项卡点击传值
+				tabnav();
+				
+				//频道统计入口
+				var _channelsid = uget('channelSid');
+				if(_channelsid != null)  setCookie('_channelsid',_channelsid,24);
+				
+				//导航按钮
+				$('.nav').on('tap','a',function(){
+					var url = this.getAttribute('href');
+					var id = url;
+					$.openWindow({
+						id: id,
+						url: url
+					});
+				});
+				
+				$('.mui-scroll').on('tap','.call-tel',function(){
+					location.href = this.getAttribute('href');
+					//统计事件
+					_czc.push(["_trackEvent", "按钮", "电话咨询", , , "callin"]);
+				})
+				
+				
+				$('#pullrefresh').scroll();
+				
+				$(".link-1").on('tap','a',function(){
+					 
+					//获取id
+					var url = this.getAttribute("href");
+					var cartag = this.getAttribute("data-cartag");
+					var cartagText = this.getAttribute("data-tagvalue");
+					localStorage.setItem('backfrom','index.html');
+					localStorage.setItem('cartag',cartag);
+					localStorage.setItem('cartagText',cartagText);
+				
+					var id = url;
+					if(url != null) {
+						mui.openWindow({
+							id: id,
+							url: url
+						});
+					}
+				});
+			});
+			
+		})(mui,document);
+		
+	</script>
+	<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1256849504'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s11.cnzz.com/z_stat.php%3Fid%3D1256849504%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));
+	document.getElementById("cnzz_stat_icon_1256849504").style.display = "none";
+	</script>
+	
+</body>
+</html>

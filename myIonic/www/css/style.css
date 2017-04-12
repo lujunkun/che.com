@@ -1,0 +1,261 @@
+/* Empty. Add your own CSS if you like */
+*{
+	box-sizing: border-box;
+}
+.tab-item .icon,.tab-title{
+	color: black;
+}
+.bar.bar-energized .title{
+	color: black;
+}
+#rate .item-input-wrapper{
+	background: #fdd471;
+}
+#rate{
+	background: #DDD;
+	height: 100vh;
+}
+#rate .logo{
+	height: 155px;
+	width: 100%;
+	background: url(../img/background@2x.png) no-repeat;
+	background-size: 100%;
+	position: fixed;
+	z-index: 10;
+	top: 44px;
+	left: 0;
+}
+#rate .logo p{
+	text-align: center;
+	margin-top: 70px;
+}
+#rate .logo img {
+	width: 20%;
+}
+.empty{
+	height: 125px;
+}
+#rate .row{
+	text-align: center;
+	width: 100%;
+	padding: 0;
+}
+#rate .col{
+  background-color: #FFFFFF;
+  padding: 5px;
+  border: 1px solid #ddd;
+  border-radius: 2px;
+  text-align: center;
+  font-size: 0.8rem;
+}
+#rate .col-demo a{
+	display: block;
+	padding: 12px;
+	color: #444;
+	text-decoration: none;
+}
+#rate .col-demo a img{
+	width: 60px;
+	height: 30px;
+}
+#rate .row1 .col{
+	border: none;
+	padding: 15px;
+	height: 160px;
+	overflow: hidden;
+}
+
+#rate .shopping{
+	background: #FFFFFF;
+	margin-top: 15px;
+	text-align: center;
+	padding: 12px;
+	color: #666;
+}
+#rate .line{
+	border-bottom: 1px solid #888;
+	position: relative;
+	top: 10px;
+}
+#rate .text {
+	padding: 0 12px;
+	background: #FFFFFF;
+	position: relative;
+}
+#rate .row1 img{
+	padding: 8px;
+	height: 70px;
+	position: relative;
+	z-index: 10;
+	background: white;
+}
+#rate .line2{
+	margin: 0 8%;
+	border: 1px solid #fdc235;
+	position: relative;
+	top: 52px;
+	z-index: 0;
+}
+#rate .server{
+	margin-top: 12px;
+}
+#rate .server img{
+	width: 100%;
+}
+#rate .footer_b{
+	text-align: center;
+	/*background: #DDD;*/
+	margin: 12px;
+	padding-bottom: 44px;
+}
+#find .logo{
+	height: 155px;
+	width: 100%;
+	background: url(../img/find_kv@2x.png) no-repeat;
+	background-size: 100%;
+	position: fixed;
+	z-index: 10;
+	top: 44px;
+	left: 0;
+}
+#find .list{
+	margin: 0;
+}
+#help{
+	background: #DDD;
+}
+ .min{
+	font-size: 0.8rem;
+	color: #666;
+}
+ .bold{
+	font-weight: 600;
+	color: #444;
+}
+i.icons_small{
+	font-size: 15px !important;
+}
+i.icons_col{
+	color: #AAA !important;
+}
+#me{
+	background: #DDD;
+}
+.changes .col-demo{
+	text-align: center;
+}
+.changes .row ,.changes .col{
+	padding: 0;
+}
+.changes .min{
+	line-height: 40px;
+	padding: 9px 0;
+}
+.changes .on{
+	border-bottom: 2px solid orange;
+	color: orange;
+}
+.changes .item{
+	padding: 0;
+}
+.changes .max{
+	font-size: 14px;
+	color: #666;
+	position: relative;
+	top: -3px;
+	padding-left: 12px;
+}
+.liucheng{
+	padding-left: 24px;
+}
+.liucheng li{
+	padding: 12px 0;
+}
+.content_b{
+	position: relative;
+}
+.line_point{
+	position: absolute;
+	top: 32px;
+}
+.line_point .line{
+	width: 3px;
+	height: 30px;
+	border-left: 1px solid #444;
+	position: relative;
+	left: 3px;
+}
+.line_point .point{
+	width: 8px;
+	height: 8px;
+	border-radius: 50%;
+	background: orange;
+	margin: 5px 0;
+}
+.params{
+	padding: 8px 16px;
+}
+.params span:nth-of-type(2n){
+	margin-left: 8px;
+}
+
+/*上拉框样式*/
+div.choice-pciker{
+	width: 100vw;
+	position: fixed;
+	top: 0;
+	z-index: 500;
+}
+.mui-pciker-list{
+	width: 100vw;
+	position: absolute;
+	bottom: 0px;
+	z-index: 300;
+	text-align: center;
+	background: #DDD;
+	font-size: 18px;
+}
+.mui-pciker-list p{
+	padding: 3px;
+	margin: 0;
+	height: 25px;
+}
+.mui-pciker-b{
+	position: relative;
+	width: 100vw;
+	height: 100vh;
+	background: gray;
+	opacity: 0.6;
+	z-index: 200;
+}
+.icons_smalls{
+	font-size: 22px !important;
+	color:#DDD
+}
+
+
+
+
+/*.mui-pciker-list > li:nth-of-type(2),.mui-pciker-list > li:nth-of-type(4) {
+	height: 150px;
+	overflow: hidden;
+	border: 1px solid red;
+}
+.mui-pciker-list > ul > li{
+	padding: 5px;
+}
+.mui-pciker-list > li:nth-of-type(3){
+	border-bottom: 1px solid #CCC;
+	border-top: 1px solid #CCC;
+	padding: 5px;
+	margin-top: 8px;
+}
+.mui-pciker-list > li:nth-of-type(2) li{
+	background: #DDD;
+	
+}*/
+/*.mui-pciker-list > li:nth-of-type(2) ul{
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+}*/

@@ -1,0 +1,61 @@
+<ion-view id="cars">
+	<ion-header-bar class="item-input-inset bar-light padding">
+		<button class="button button-clear icon ion-ios-arrow-left" ng-click="goback()"> <span class="min">返回</span></button>
+		<i class="padding-left"></i>
+		<i class="padding-left"></i>
+		<label class="item-input-wrapper">
+			<i class="padding-left"></i>
+			<i class="padding-left"></i>
+        <i class="icon ion-ios-search placeholder-icon padding-left"></i>
+        <input type="search" class="dark" placeholder="请搜索您感兴趣的车型" style="font-size: 11px;">
+      </label>
+	</ion-header-bar>
+	<div class="bar bar-subheader">
+		<div class="title" style="padding: 5px 0;">
+			<div class="row" style="text-align: center;font-size: 0.8rem;height: 30px;">
+				<div class="col col-33">
+					<div class="col-demo" style="position: relative;bottom: 15px;">
+						品牌找车
+						<i class="icon ion-arrow-down-b icons_small"></i>
+					</div>
+				</div>
+				<div class="col col-33" style="border-left: 1px solid #E8E8E8;border-right: 1px solid #E8E8E8;">
+					<div class="col-demo" style="position: relative;bottom: 15px;" ng-click="loadMore(pageNumber = 0,brandId ='',carModel ='',priceTypeId ='2',seriesId ='')">
+						价格范围
+						<i class="icon ion-arrow-down-b icons_small"></i>
+					</div>
+				</div>
+				<div class="col col-33">
+					<div class="col-demo" style="position: relative;bottom: 15px;">
+						车型级别
+						<i class="icon ion-arrow-down-b icons_small"></i>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<ion-content class="has-subheader">
+		<div class="list" ng-repeat="dos in data">
+			<a class="item item-thumbnail-left" ui-sref="goods({goodsId:car.modelIdString})" ng-repeat="car in dos.response.newCarSellList">
+				<img src="{{car.goodsMainPhoto | toHttp}}">
+				<h2>{{car.goodsName}}</h2>
+				<p style="padding: 9px 0;">指导价: {{car.marketPrice | toPrice}}</p>
+				<strong style="color: red;">{{car.currentPrice | toPrice}}</strong>
+			</a>
+		</div>
+		<ion-infinite-scroll on-infinite="load()" distance="1%">
+		</ion-infinite-scroll>
+	</ion-content>
+	<!--<ion-footer-bar align-title="left" class="bar-assertive">-->
+		<div class="tabs tabs-icon-top tabs-light" style="color: orange;">
+			<a class="tab-item  positive" href="#" style="border-right: 1px solid #666; width: 50%;max-width: 500px;">
+			<i class="icon ion-headphone  energized" style="color: orange;position: relative; font-size: 18px;top: 8px;"></i>
+			<span class="min" style="color: orange;position: relative;bottom: 8px;">在线咨询</span>
+		</a>
+		<a class="tab-item  energized" href="#" style=" width: 50%;max-width: 500px;">
+			<i class="icon  ion-ios-telephone-outline  energized" style="color: orange;position: relative; font-size: 18px;top: 8px;"></i>
+			<span class="min" style="color: orange;position: relative;bottom: 8px;">电话咨询</span>
+		</a>
+		</div>
+	<!--</ion-footer-bar>-->
+</ion-view>

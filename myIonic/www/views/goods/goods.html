@@ -1,0 +1,156 @@
+<ion-view id="goods">
+	<ion-header-bar class="item-input-inset bar-light padding">
+		<button class="button button-clear icon ion-ios-arrow-left" ng-click="goback()"> <span class="min">返回</span></button>
+		<h2 class="title">
+			{{good.carInfo.brand_name}} {{good.carInfo.car_brand_type_name}}
+		</h2>
+	</ion-header-bar>
+	<ion-content>
+		<div style="text-align: center;">
+			<img src="{{good.carInfo.goodsMainPhoto | toHttp}}" style="width: auto;max-height: 200px;" />
+		</div>
+		<h5 style="padding-left: 15px;">{{good.carInfo.goodsName}}</h5>
+		<div class="list">
+			<a class="item">
+				<h4 style="color: red;font-size: 18px;font-weight: 700;">{{good.carInfo.currentPrice | toPrice}}</h4>
+				<p class="min">指导价: {{good.carInfo.marketPrice | toPrice}}</p>
+			</a>
+			<a class="item" style="padding: 0 16px;">
+				<div class="row">
+					<div class="col">
+						<div class="col-demo">
+							<img src="http://m.che.com/skin/icon/cybz@2x.png" style="width: 16px;" />
+							<span class="min">车源保证</span>
+						</div>
+					</div>
+					<div class="col">
+						<div class="col-demo"><img src="http://m.che.com/skin/icon/qwdj@2x.png" style="width: 16px;" />
+							<span class="min">全网底价</span></div>
+					</div>
+					<div class="col">
+						<div class="col-demo"><img src="http://m.che.com/skin/icon/zfaq@2x.png" style="width: 16px;" />
+							<span class="min">支付安全</span></div>
+					</div>
+					<div class="col">
+						<div class="col-demo"><img src="http://m.che.com/skin/icon/zygw@2x.png" style="width: 16px;" />
+							<span class="min">专业顾问</span></div>
+					</div>
+				</div>
+			</a>
+		</div>
+		<div class="list">
+			<a class="item item-icon-right">
+				 <span class="min" style="margin-right: 12px;">外观颜色</span>
+				 <span class="min bold">北极白</span>
+				 <i class="icon ion-ios-arrow-right" style="font-size: 24px;color: #888;"></i>
+			</a>
+			<a class="item item-icon-right">
+				 <span class="min" style="margin-right: 12px;">付款方式</span>
+				 <span class="min bold">选择付款方式</span>
+				 <i class="icon ion-ios-arrow-right" style="font-size: 24px;color: #888;"></i>
+			</a>
+			<a class="item item-icon-right">
+				 <span class="min" style="margin-right: 12px;">提车门店</span>
+				 <span class="min bold">选择提车门店</span>
+				 <i class="icon ion-ios-arrow-right" style="font-size: 24px;color: #888;"></i>
+			</a>
+		</div>
+		<div class="list changes">
+			<div class="item">
+				<div class="row">
+					<div class="col">
+						<div class="col-demo">
+							<span class="min" ng-class="{on:!isshow}" ng-click="isshow = false">购车流程</span>
+						</div>
+					</div>
+					<div class="col">
+						<div class="col-demo">
+							<span class="min"  ng-class="{on:isshow}" ng-click="isshow = true">基本参数</span>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="item">
+				<div ng-show="!isshow" style="padding: 15px;" class="content_b">
+					<div class="line_point">
+						<div class="point"></div>
+						<div class="line"></div>
+						<div class="point"></div>
+						<div class="line"></div>
+						<div class="point"></div>
+						<div class="line"></div>
+						<div class="point"></div>
+					</div>
+					
+					<ul class="liucheng">
+						<li>
+							<img src="http://m.che.com/skin/icon/wsmfyy@2x.png" style="width: 18px;"/>
+							<span class="max">车辆在线预定</span>
+						</li>
+						<li>
+							<img src="http://m.che.com/skin/icon/kfgjqdgcyx@2x.png" style="width: 18px;"/>
+							<span class="max">客服确定需求</span>
+						</li>
+						<li>
+							<img src="http://m.che.com/skin/icon/xxkc@2x.png" style="width: 18px;"/>
+							<span class="max">专属顾问服务</span>
+						</li>
+						<li>
+							<img src="http://m.che.com/skin/icon/yctc@2x.png" style="width: 18px;"/>
+							<span class="max">验车付款交车</span>
+						</li>
+					</ul>
+				</div>
+				<div ng-show="isshow">
+					<ul class="params">
+						<li>
+							<span class="min">成型号名称</span>
+							<span class="min bold">{{good.carInfo.goodsName}}</span>
+						</li>
+						<li>
+							<span class="min">指导价</span>
+							<span class="min bold">{{good.carInfo.currentPrice | toPrice}}</span>
+						</li>
+						<li>
+							<span class="min">厂商</span>
+							<span class="min bold">{{good.carInfo.carBaseConfBasic.factory_name}}</span>
+						</li>
+						<li>
+							<span class="min">级别</span>
+							<span class="min bold">{{good.carInfo.carBaseConfBasic.car_model}}</span>
+						</li>
+						<li>
+							<span class="min">发动机</span>
+							<span class="min bold">{{good.carInfo.carBaseConfBasic.engine}}</span>
+						</li>
+						<li>
+							<span class="min">变速箱</span>
+							<span class="min bold">{{good.carInfo.carBaseConfBasic.gearbox}}</span>
+						</li>
+						<li>
+							<span class="min">长*宽*高(mm)</span>
+							<span class="min bold">{{good.carInfo.carBaseConfBasic.lwh}}</span>
+						</li>
+						<li>
+							<span class="min">车身结构</span>
+							<span class="min bold">{{good.carInfo.carBaseConfBasic.body_structure}}</span>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</ion-content>
+	<div class="tabs tabs-icon-top tabs-light" style="color: orange;">
+		<a class="tab-item  positive" href="#" style="border-right: 1px solid #666; width: 25%;max-width: 150px;">
+			<i class="icon ion-headphone  energized" style="color: orange;position: relative; font-size: 18px;top: 8px;"></i>
+			<span class="min" style="color: orange;position: relative;bottom: 8px;">在线咨询</span>
+		</a>
+		<a class="tab-item  energized" href="#" style=" width: 25%;max-width: 150px;border-right: 1px solid #666;">
+			<i class="icon  ion-ios-telephone-outline  energized" style="color: orange;position: relative; font-size: 18px;top: 8px;"></i>
+			<span class="min" style="color: orange;position: relative;bottom: 8px;">电话咨询</span>
+		</a>
+		<a class="tab-item  energized" href="#" style=" width: 50%;max-width: 1500px;padding-top: 17px;background: orange;color: #000000;">
+			<span class="min">立即预定</span>
+		</a>
+	</div>
+</ion-view>

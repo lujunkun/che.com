@@ -1,0 +1,10 @@
+{
+  "name": "myIonic",
+  "app_id": "",
+  "proxies": [
+    {
+      "path": "/api",
+      "proxyUrl": "http://carapi.che.com"
+    }
+  ]
+}
